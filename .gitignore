@@ -122,3 +122,5 @@ dist
 
 .prettierignore
 .prettierrc
+
+mongodbtxt.txt
