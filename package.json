@@ -15,6 +15,7 @@
     "dev": "nodemon -r dotenv/config --experimental-json-modules Backend/index.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1079.0",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.10.0",
     "cookie-parser": "^1.4.7",
