@@ -35,7 +35,7 @@ export const checkVideoVisibility = asyncHandler(async (req, res, next) => {
         }
         return next();
     }
-
+    
     // If none of the above conditions are met, deny access
     throw new ApiError(403, "You are not authorized to view this video");
 });
