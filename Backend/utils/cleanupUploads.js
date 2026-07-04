@@ -1,15 +1,19 @@
 import { deleteFromCloudinary } from "./cloudinary.js";
 import {deleteVideoFromR2} from "./cloudfareR2.js";
 
-export const cleanupUploads = async ({videokey, thumbnailpublicid}) => {
+export const cleanupUploads = async ({
+    videoKey,
+    thumbnailPublicId,
+}) => {
     try {
-        if (videokey) {
-            await deleteVideoFromR2(videokey);
+        if (thumbnailPublicId) {
+            await deleteFromCloudinary(thumbnailPublicId);
         }
-        if (thumbnailpublicid) {
-            await deleteFromCloudinary(thumbnailpublicid);
+
+        if (videoKey) {
+            await deleteVideoFromR2(videoKey);
         }
     } catch (error) {
-        console.error("Error cleaning up uploads:", error.message);
+        console.error("Cleanup failed:", error.message);
     }
-}
+};
