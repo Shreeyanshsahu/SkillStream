@@ -15,7 +15,7 @@ import {
     validateReservedUsername,
     validateAvatar,
     validateCloudinaryUpload
-} from "../utils/validators.js";
+} from "../validators/validators.js";
 
 console.log("user.controller.js loaded");
 

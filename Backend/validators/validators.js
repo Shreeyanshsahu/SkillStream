@@ -1,8 +1,20 @@
-import { ApiError } from "./ApiError.js";
+import { ApiError } from "../utils/ApiError.js";
+import mongoose from "mongoose";
+/*
+|--------------------------------------------------------------------------
+| Object Id Validation
+|--------------------------------------------------------------------------
+*/
+
+export const validateObjectId = (id) => {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        throw new ApiError(400, "Invalid Object Id");
+    }
+};
 
 /*
 |--------------------------------------------------------------------------
-| Required Fields
+| Required Fields Validation
 |--------------------------------------------------------------------------
 */
 
