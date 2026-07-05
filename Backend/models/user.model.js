@@ -38,6 +38,9 @@ const userSchema = new Schema(
             type: String,
             enum: ["USER", "ADMIN","PAIDMEMBER"],
             default: "USER"
+        },subscribers: {
+            type: Number,
+            default: 0
         }
     }, {
     timestamps: true

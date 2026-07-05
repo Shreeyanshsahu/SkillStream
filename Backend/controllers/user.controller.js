@@ -495,6 +495,9 @@ const SubscribeToChannel = asyncHandler(async (req, res) => {
         channel: channel._id
     });
 
+    channel.subscribers+=1;
+    await channel.save({ validateBeforeSave: false });
+
     return res.status(201).json(new ApiResponse(
         201,
         subscription,
@@ -519,11 +522,13 @@ const UnsubscribeFromChannel = asyncHandler(async (req, res) => {
         subscriber: req.user._id,
         channel: channel._id
     });
-
+    
     if (!subscription) {
         throw new ApiError(404, "Subscription not found.");
     }
 
+    channel.subscribers-=1;
+    await channel.save({ validateBeforeSave: false });
     return res.status(200).json(new ApiResponse(
         200,
         null,
