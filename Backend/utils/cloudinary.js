@@ -8,18 +8,10 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-console.log({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET.substring(0, 5)
-});
+
 
 const uploadOnCloudinary = async (localFilePath) => {
     try {
-        // console.log("Received path:", localFilePath);
-        // console.log("Current working directory:", process.cwd());
-        // console.log("Absolute path:", fs.realpathSync.native ? "skip" : "");
-        // console.log("Exists:", fs.existsSync(localFilePath));
         if (!fs.existsSync(localFilePath)) {
             throw new Error("File does not exist");
             return null;

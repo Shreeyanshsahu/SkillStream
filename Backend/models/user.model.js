@@ -1,3 +1,5 @@
+console.log("Loading User.model.js", import.meta.url);
+
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";

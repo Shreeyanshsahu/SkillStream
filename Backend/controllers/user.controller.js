@@ -589,6 +589,25 @@ const getwatchHistory = asyncHandler(async (req, res) => {
     ));
 });
 
+const DeleteFromwatchHistory = asyncHandler(async (req, res) => {
+    const { videoId } = req.params;
+    if (!mongoose.isValidObjectId(videoId)) {
+        throw new ApiError(400, "Invalid video ID.");
+    }
+
+    const user = await User.findByIdAndUpdate( req.user._id,
+    {
+        $pull: {
+            watchHistory: videoId
+        }
+    }
+);
+    return res.status(200).json(new ApiResponse(
+        200,
+        null,
+        "Video removed from watch history successfully."
+    ));
+});
 
 export {
     registerUser,
@@ -604,5 +623,6 @@ export {
     getUserChannelProfile,
     SubscribeToChannel,
     UnsubscribeFromChannel,
-    getwatchHistory
+    getwatchHistory,
+    DeleteFromwatchHistory
 };

@@ -16,7 +16,8 @@ import {
     SubscribeToChannel,
     UnsubscribeFromChannel,
     getUserChannelProfile,
-    getwatchHistory
+    getwatchHistory,
+    DeleteFromwatchHistory
 } from '../controllers/user.controller.js';
 
 router.route('/register').post(
@@ -101,5 +102,11 @@ router.route('/watchhistory').get(
     verifyJWT,
     getwatchHistory
 );
+
+router.route('/watchhistory/:videoId').delete(
+    verifyJWT,
+    DeleteFromwatchHistory
+);
+
 console.log("User routes loaded");
 export default router;
