@@ -6,7 +6,7 @@ import {
 
 import fs from "fs";
 import path from "path";
-import ApiError from "./ApiError.js";
+import {ApiError} from "./ApiError.js";
 
 // Create only ONE client for the entire application
 const s3Client = new S3Client({

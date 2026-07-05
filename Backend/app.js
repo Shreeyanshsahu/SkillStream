@@ -6,6 +6,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import userRouter from "./routes/user.route.js";
+import videoRouter from "./routes/videos.routes.js";
 
 const app = express();
 
@@ -59,7 +60,7 @@ app.use((err, req, res, next) => {
 });
 // Routes
 app.use("/api/v1/users", userRouter);
-
+app.use("/api/v1/videos", videoRouter);
 
 
 

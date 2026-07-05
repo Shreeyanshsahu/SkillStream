@@ -1,4 +1,4 @@
-import ApiError from "../utils/ApiError.js";
+import { ApiError } from "../utils/ApiError.js";
 import { Category } from "../models/category.model.js";
 
 /*
@@ -8,7 +8,9 @@ import { Category } from "../models/category.model.js";
 */
 
 export const validateCategoryDB = async (category) => {
-    const categoryExists = await Category.findById(category);
+    const categoryExists = await Category.findOne({
+        name: category
+    });
     if (category && !categoryExists) {
         throw new ApiError(
             400,

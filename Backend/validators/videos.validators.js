@@ -1,4 +1,4 @@
-import ApiError from "../utils/ApiError.js";
+import {ApiError} from "../utils/ApiError.js";
 export const MAX_VIDEO_SIZE = 100 * 1024 * 1024;
 export const MAX_THUMBNAIL_SIZE = 5 * 1024 * 1024;
 /*

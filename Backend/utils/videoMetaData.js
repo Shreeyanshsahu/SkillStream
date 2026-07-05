@@ -1,12 +1,12 @@
 import ffmpeg from "fluent-ffmpeg";
 import ffprobe from "ffprobe-static";
 
-import ApiError from "./ApiError.js";
+import {ApiError} from "./ApiError.js";
 
 ffmpeg.setFfprobePath(ffprobe.path);
 
 export const getVideoMetadata = (videoFile) => {
-
+    console.log(videoFile.path);
     return new Promise((resolve, reject) => {
 
         if (!videoFile || !videoFile.path) {
@@ -18,6 +18,7 @@ export const getVideoMetadata = (videoFile) => {
         ffmpeg.ffprobe(videoFile.path, (err, metadata) => {
 
             if (err) {
+                console.log("Error reading video metadata:", err);
                 return reject(
                     new ApiError(
                         500,

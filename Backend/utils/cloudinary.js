@@ -16,7 +16,10 @@ console.log({
 
 const uploadOnCloudinary = async (localFilePath) => {
     try {
-
+        // console.log("Received path:", localFilePath);
+        // console.log("Current working directory:", process.cwd());
+        // console.log("Absolute path:", fs.realpathSync.native ? "skip" : "");
+        // console.log("Exists:", fs.existsSync(localFilePath));
         if (!fs.existsSync(localFilePath)) {
             throw new Error("File does not exist");
             return null;
@@ -27,7 +30,7 @@ const uploadOnCloudinary = async (localFilePath) => {
             folder: "uploads",
         });
         console.log("File uploaded to Cloudinary:", result.secure_url);
-        fs.unlinkSync(localFilePath); 
+        fs.unlinkSync(localFilePath);
         // Remove the file from local storage after uploading to  Cloudinary
         return result;
     } catch (error) {
