@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { User } from "./user.model.js";
 import { Video } from "./video.model.js";
-const LikesSchema = new mongoose.Schema(
+const likesSchema = new mongoose.Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
@@ -19,7 +19,7 @@ const LikesSchema = new mongoose.Schema(
     }
 )
 
-likeSchema.index(
+likesSchema.index(
 {
     user:1,
     video:1
@@ -27,4 +27,4 @@ likeSchema.index(
 {
     unique:true
 })
-export const Likes = mongoose.model("Likes", LikesSchema)
+export const Likes = mongoose.model("Likes", likesSchema)
