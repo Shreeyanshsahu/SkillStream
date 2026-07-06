@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 
 import userRouter from "./routes/user.route.js";
 import videoRouter from "./routes/videos.routes.js";
-
+import commentRouter from "./routes/comments.route.js";
 const app = express();
 
 // Middlewares
@@ -61,7 +61,7 @@ app.use((err, req, res, next) => {
 // Routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/videos", videoRouter);
-
+app.use("/api/v1/comments", commentRouter);
 
 
 
