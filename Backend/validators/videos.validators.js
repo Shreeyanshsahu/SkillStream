@@ -86,7 +86,7 @@ export const validateVideoUpload = (video, thumbnail, title, description, catego
 |--------------------------------------------------------------------------
 */
 
-export const validateUpdate = (video, thumbnail, title) => {
+export const validateUpdate = (video, thumbnail, title,description,category,visibility) => {
     if (title)
         validateTitle(title);
 

@@ -62,5 +62,6 @@ router.route('/updatevideo/:videoId').patch(
     upload.single('video'),
     updateVideo
 )
+
 console.log("Video upload route is working");
 export default router;
