@@ -350,6 +350,9 @@ The long-term goal is to combine scalable backend engineering with intelligent l
 
 ---
 
+# Postman documentation link
+>> https://shreeyanshxxsahu-8199212.postman.co/workspace/b93eea00-8e51-4af3-8c9f-36aa95bf0425/documentation/51783407-33c71109-2f75-41c6-9263-65de3aa0f8e3
+
 # 👨‍💻 Author : Shreeansh Sahu
 
 Built with a focus on scalable backend engineering, clean architecture, and production-ready development practices.
