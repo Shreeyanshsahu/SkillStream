@@ -17,8 +17,6 @@ import {
     validateCloudinaryUpload
 } from "../validators/validators.js";
 
-console.log("user.controller.js loaded");
-
 const genrateAccessandRefreshToken = async (userId) => {
     try {
         const user = await User.findById(userId);
