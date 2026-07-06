@@ -11,12 +11,10 @@ const channelUpdateSchema = new mongoose.Schema(
         update: {
             type: String,
             required: true
-        },upvotes: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Upvote"
-            }
-        ]
+        },upvoteCount: {
+            type: Number,
+            default: 0
+        }
     },
     {
         timestamps: true

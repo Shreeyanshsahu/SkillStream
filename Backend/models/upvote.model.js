@@ -21,5 +21,13 @@ const upvoteSchema = new mongoose.Schema(
         timestamps: true
     }
 )
+upvoteSchema.index(
+    { user: 1, comment: 1 },
+    { unique: true, partialFilterExpression: { comment: { $exists: true } } }
+);
 
+upvoteSchema.index(
+    { user: 1, post: 1 },
+    { unique: true, partialFilterExpression: { post: { $exists: true } } }
+);
 export const Upvote = mongoose.model("Upvote", upvoteSchema)
