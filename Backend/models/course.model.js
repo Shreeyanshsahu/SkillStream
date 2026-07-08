@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 import { User } from "./user.model.js";
 import { Video } from "./video.model.js";
-const PlaylistSchema = new mongoose.Schema(
+const CourseSchema = new mongoose.Schema(
   {
-    name: {
+    coursename: {
       type: String,
       required: true,
       trim: true,
@@ -31,9 +31,9 @@ const PlaylistSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-playlistSchema.index({
+CourseSchema.index({
+    coursename:1,
     user:1
 })
 
-const Playlist = mongoose.model("Playlist", PlaylistSchema);
+export const Course = mongoose.model("Course", CourseSchema);

@@ -60,11 +60,13 @@ import videoRouter from "./routes/videos.routes.js";
 import commentRouter from "./routes/comments.route.js";
 import UpvoteRouter from "./routes/upvotes.route.js";
 import likeRouter from "./routes/likes.route.js";
+import CourseRouter from "./routes/courses.route.js";
 // Routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/videos", videoRouter);
 app.use("/api/v1/comments", commentRouter);
 app.use("/api/v1/upvotes", UpvoteRouter);
+app.use("/api/v1/courses", CourseRouter);
 app.use("/api/v1/likes", likeRouter);
 
 
