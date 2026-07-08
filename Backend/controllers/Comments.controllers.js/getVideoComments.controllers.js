@@ -3,6 +3,7 @@ import { validateObjectId } from "../../validators/validators.js";
 import {
     validateDescription,
 } from "../../validators/videos.validators.js";
+import mongoose from "mongoose";
 import { asyncHandler } from "../../utils/asyncHandler.js";
 import { ApiResponse } from "../../utils/ApiResponse.js";
 import { Comment } from "../../models/comment.model.js";
@@ -28,7 +29,7 @@ const getVideoComments = asyncHandler(async (req, res) => {
     const comments = await Comment.aggregate([
         {
             $match: {
-                video: videoId
+                video: new mongoose.Types.ObjectId(videoId)
             }
         },
         {

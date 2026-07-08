@@ -19,7 +19,7 @@ const deleteComment = asyncHandler(async (req, res) => {
     if (comment.user.toString() !== req.user._id.toString()) {
         throw new ApiError(403, "You are not authorized to delete this comment");
     }
-    video = await Video.findById(comment.video);
+    let video = await Video.findById(comment.video);
     if (video) {
         video.commentsCount -= 1;
         await video.save();

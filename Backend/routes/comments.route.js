@@ -11,7 +11,7 @@ router.route('/createcomment/:videoId').post(
     createComment
 );
 
-router.route('/comments/:videoId').get(
+router.route('/:videoId').get(
     verifyJWT,
     getVideoComments
 );
