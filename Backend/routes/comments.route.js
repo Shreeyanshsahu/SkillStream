@@ -1,10 +1,10 @@
 import { Router } from 'express';
 const router = Router();
 import verifyJWT from '../middlewares/auth.middleware.js';
-import { createComment} from '../controllers/Comments.controllers.js/createComment.controllers.js';
-import { deleteComment } from '../controllers/Comments.controllers.js/deleteComment.controllers.js';
-import { getVideoComments } from '../controllers/Comments.controllers.js/getVideoComments.controllers.js';
-import { updateComment } from '../controllers/Comments.controllers.js/updateComment.controllers.js';
+import { createComment} from '../controllers/Comments.controllers/createComment.controllers.js';
+import { deleteComment } from '../controllers/Comments.controllers/deleteComment.controllers.js';
+import { getVideoComments } from '../controllers/Comments.controllers/getVideoComments.controllers.js';
+import { updateComment } from '../controllers/Comments.controllers/updateComment.controllers.js';
 
 router.route('/createcomment/:videoId').post(
     verifyJWT,

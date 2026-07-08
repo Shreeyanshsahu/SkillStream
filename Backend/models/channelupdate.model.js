@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { User } from "./user.model.js";
-import { Upvote } from "./upvote.model.js";
 const channelUpdateSchema = new mongoose.Schema(
     {
         channel: {
