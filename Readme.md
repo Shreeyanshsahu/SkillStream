@@ -1,162 +1,208 @@
 # 🎓 SkillStream
 
-> **Learn. Create. Grow.**
-
-SkillStream is a modern full-stack learning platform that empowers creators to publish structured educational content and helps learners discover, organize, and master new skills through high-quality video courses.
-
-Unlike traditional video-sharing platforms, SkillStream is built around **learning** rather than entertainment. It combines scalable backend architecture, secure authentication, cloud-based media storage, and production-ready API design to deliver an industry-grade application.
-
-> **Current Status:** 🚧 Backend Development in Progress
-> **Frontend:** Planned for the next milestone
+<p align="center">
+  <h3 align="center">Learn. Create. Grow.</h3>
+  <p align="center">
+    A production-ready backend for a modern learning platform built with Node.js, Express, MongoDB, and Cloud Services.
+  </p>
+</p>
 
 ---
 
-# 📖 About the Project
+## 🚀 Overview
 
-SkillStream is designed to bridge the gap between content creators and learners.
+**SkillStream** is a scalable backend powering an educational video platform where creators can publish structured courses, upload learning content, interact with learners, and monitor channel performance through an analytics dashboard.
 
-Creators can build professional channels, upload educational videos, organize them into playlists, engage with their audience, and analyze performance through detailed dashboards.
+Unlike traditional video-sharing platforms, SkillStream is designed around **structured learning**, allowing educators to organize videos into courses while providing learners with an engaging and organized educational experience.
 
-Learners can discover courses, subscribe to creators, build personalized playlists, save watch history, continue learning from where they left off, and receive personalized recommendations.
-
-The project emphasizes clean architecture, scalability, security, and maintainability while implementing backend concepts commonly used in production systems.
+The project follows industry-standard backend practices including secure authentication, modular architecture, cloud media storage, aggregation pipelines, request validation, and centralized error handling.
 
 ---
 
-# ✨ Core Features
+# ✨ Current Status
 
-## 👤 Authentication & User Management
+> **Backend Version:** ✅ V1 Complete
+
+| Module              | Status |
+| ------------------- | ------ |
+| Authentication      | ✅      |
+| User Management     | ✅      |
+| Video Module        | ✅      |
+| Comments            | ✅      |
+| Likes               | ✅      |
+| Subscriptions       | ✅      |
+| Course Management   | ✅      |
+| Channel Updates     | ✅      |
+| Dashboard Analytics | ✅      |
+| Cloud Storage       | ✅      |
+| Validation Layer    | ✅      |
+
+Frontend development is the next milestone.
+
+---
+
+# 🌟 Features
+
+## 🔐 Authentication & Authorization
 
 * Secure User Registration
-* Login & Logout
-* JWT Authentication
+* User Login & Logout
+* JWT Access Token Authentication
 * Refresh Token Rotation
 * HTTP-only Secure Cookies
-* Password Encryption using bcrypt
-* Change Password
-* Update Profile
-* Upload Avatar
-* Upload Cover Image
+* Password Hashing using bcrypt
 * Current User Session
+* Change Password
+* Protected Routes
+* Ownership-based Authorization
+
+---
+
+## 👤 User Management
+
+* User Profiles
+* Avatar Upload
+* Cover Image Upload
+* Profile Updates
+* Channel Information
+* Watch History
+* Creator Channels
 
 ---
 
 ## 🎥 Video Management
 
 * Upload Educational Videos
-* Cloudflare R2 Video Storage
-* Cloudinary Image Storage
 * Publish / Unpublish Videos
-* Edit Video Details
+* Update Video Details
 * Delete Videos
-* Video Metadata Extraction
-* Thumbnail Support
-* View Tracking
+* Video Search
 * Pagination
-* Search Videos
+* View Tracking
+* Thumbnail Support
+* Cloud Storage Integration
+* Metadata Management
 
 ---
 
-## 📚 Learning Experience
+## 📚 Course Management
 
-* Personalized Watch History
-* Continue Watching
-* Save Videos
-* Learning Playlists
-* Recommended Videos
-* Channel-based Learning Collections
+SkillStream organizes learning through structured courses.
+
+Features include:
+
+* Create Course
+* Update Course
+* Delete Course
+* Course Visibility
+* Add Videos to Course
+* Remove Videos from Course
+* Search Courses
+* Retrieve Individual Courses
+* Retrieve Creator Courses
 
 ---
 
 ## 💬 Community Features
 
-* Video Comments
+### Comments
+
+* Create Comment
+* Edit Comment
+* Delete Comment
+* Paginated Comments
+
+### Likes
+
 * Like Videos
 * Like Comments
-* Subscribe to Channels
-* Creator Profiles
-* Community Interaction
+* Toggle Like
+* Like Counters
+
+### Subscriptions
+
+* Subscribe to Creators
+* Unsubscribe
+* Subscriber Count
+* Creator Following System
+
+### Channel Updates
+
+Creators can communicate directly with learners through channel updates.
+
+* Create Update
+* Edit Update
+* Delete Update
+* View Creator Updates
 
 ---
 
-## 📊 Creator Dashboard
+# 📊 Dashboard Analytics
 
-Creators can monitor:
+The dashboard provides creators with detailed insights into their content performance.
 
+### Channel Analytics
+
+* Subscriber Count
+* New Subscribers (Last 30 Days)
+* Creator Profile Information
+
+### Video Analytics
+
+* Total Videos
 * Total Views
-* Subscriber Growth
-* Engagement Statistics
-* Uploaded Videos
-* Video Performance
-* Channel Analytics
+* Total Likes
+* Total Comments
+* Average Likes per Video
+* Average Comments per Video
+* Average Video Duration
+* Most Viewed Video Statistics
+* Highest Engagement Statistics
+
+### Recent Activity
+
+* Latest Uploaded Videos
+* Latest Courses
+* Latest Comments
+
+### Top Content
+
+* Top Performing Videos
+* View-based Ranking
 
 ---
 
 # 🏗️ Backend Architecture
 
-The backend follows production-oriented software engineering practices.
+SkillStream follows a production-oriented architecture.
 
-### Architecture
-
-* MVC Pattern
-* RESTful API Design
-* Modular Folder Structure
-* Middleware-Based Request Processing
-* Centralized Error Handling
-* Utility Layer
-* Validation Layer
-* Service-Oriented Utilities
-
-### Design Principles
-
-* Clean Code
-* Separation of Concerns
-* Reusable Components
-* Scalable Folder Structure
-* Maintainable Codebase
-
----
-
-# 🔐 Security
-
-Security is implemented throughout the application.
-
-* JWT Authentication
-* Refresh Tokens
-* Secure HTTP-only Cookies
-* Password Hashing with bcrypt
-* Protected Routes
-* Request Validation
-* File Type Validation
-* Centralized Error Handling
-* Environment Variable Management
+```text
+                Client
+                   │
+                   ▼
+              Express Router
+                   │
+        ┌──────────┴──────────┐
+        │                     │
+ Authentication         Validation
+        │                     │
+        └──────────┬──────────┘
+                   ▼
+             Controllers
+                   │
+                   ▼
+              Business Logic
+                   │
+                   ▼
+              MongoDB Models
+                   │
+                   ▼
+               MongoDB Atlas
+```
 
 ---
 
-# ☁️ Cloud Infrastructure
-
-### Image Storage
-
-* Cloudinary
-
-### Video Storage
-
-* Cloudflare R2
-
-### File Upload
-
-* Multer
-
-### Utilities
-
-* Automatic Temporary File Cleanup
-* Cloud Upload Helpers
-* Pagination Utility
-* Video Metadata Utility
-
----
-
-# 🛠️ Tech Stack
+# 🛠️ Technology Stack
 
 ## Backend
 
@@ -175,186 +221,302 @@ Security is implemented throughout the application.
 * Cloudinary
 * Cloudflare R2
 
-## API Testing
+## File Upload
 
-* Postman
+* Multer
 
-## Development Tools
+## Development
 
 * Git
 * GitHub
+* Postman
 * ESLint
 * Prettier
 
 ---
 
+# ☁️ Cloud Infrastructure
+
+### Images
+
+* Cloudinary
+
+### Videos
+
+* Cloudflare R2
+
+### Upload Pipeline
+
+* Multer Middleware
+* Temporary File Cleanup
+* Secure Upload Utilities
+
+---
+
+# 🔒 Security Features
+
+* JWT Authentication
+* Refresh Token Rotation
+* Secure HTTP-only Cookies
+* Password Hashing
+* Ownership Validation
+* ObjectId Validation
+* Request Validation
+* Protected Routes
+* File Validation
+* Centralized Error Handling
+
+---
+
+# ⚙️ Engineering Concepts Demonstrated
+
+* RESTful API Design
+* MVC Architecture
+* MongoDB Aggregation Framework
+* Authentication & Authorization
+* Refresh Token Strategy
+* Cloud Storage Integration
+* Pagination
+* Compound Indexes
+* Middleware Architecture
+* Async Error Handling
+* Centralized API Responses
+* Validation Layer
+* Database Relationships
+* Modular Project Structure
+
+---
+
 # 📁 Project Structure
 
-```
-src
+```text
+Backend
 │
-├── config
-├── constants
-├── controllers
-├── db
-├── middlewares
-├── models
-├── routes
-├── utils
-├── validations
+├── config/
+├── constants/
+├── controllers/
+│   ├── auth/
+│   ├── user/
+│   ├── video/
+│   ├── comment/
+│   ├── like/
+│   ├── subscription/
+│   ├── course/
+│   ├── channelUpdate/
+│   └── dashboard/
+│
+├── db/
+├── middlewares/
+├── models/
+├── routes/
+├── utils/
+├── validators/
 ├── app.js
 └── index.js
 ```
 
 ---
 
-# 📦 Database Models
+# 🗃️ Database Models
 
 * User
 * Video
 * Comment
 * Like
-* Playlist
 * Subscription
+* Course
+* Channel Update
 * Watch History
-* Tweet / Community Post
 
 ---
 
 # 🚀 API Highlights
 
-* RESTful APIs
-* Authentication Middleware
-* Authorization Middleware
-* File Upload Middleware
-* Pagination
-* Aggregation Pipelines
-* Async Error Wrapper
-* Standardized API Responses
-* Centralized Error Handling
+* Authentication APIs
+* User APIs
+* Video APIs
+* Comment APIs
+* Like APIs
+* Subscription APIs
+* Course APIs
+* Channel Update APIs
+* Dashboard APIs
 
 ---
 
-# 🎯 Engineering Concepts Demonstrated
+# 📈 MongoDB Aggregation
 
-* Authentication & Authorization
-* Refresh Token Rotation
-* MongoDB Aggregation Framework
-* File Upload Pipelines
-* Cloud Storage Integration
-* Middleware Architecture
-* MVC Design Pattern
-* Pagination
-* Secure API Development
-* Scalable Folder Structure
-* Error Handling
-* Database Relationships
-* Production-Oriented Backend Design
+SkillStream leverages MongoDB's Aggregation Framework for advanced analytics.
+
+Implemented aggregations include:
+
+* Creator Dashboard
+* Subscriber Analytics
+* Video Statistics
+* Engagement Metrics
+* Recent Activity
+* Top Performing Videos
 
 ---
 
-# 🗺️ Development Roadmap
+# 📦 Installation
 
-## ✅ Version 1.0 — Backend Foundation(Currently in Progess)
+```bash
+git clone https://github.com/yourusername/SkillStream.git
 
-* User Authentication
-* Creator Channels
-* Video Upload System
-* Cloud Storage Integration
+cd SkillStream
+
+npm install
+```
+
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env` file.
+
+```env
+PORT=
+
+MONGODB_URI=
+
+ACCESS_TOKEN_SECRET=
+ACCESS_TOKEN_EXPIRY=
+
+REFRESH_TOKEN_SECRET=
+REFRESH_TOKEN_EXPIRY=
+
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+R2_ACCOUNT_ID=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
+R2_BUCKET_NAME=
+R2_PUBLIC_URL=
+```
+
+---
+
+# ▶️ Run Locally
+
+```bash
+npm run dev
+```
+
+---
+
+# 📮 API Documentation
+
+Complete API documentation is available in the included Postman collection.
+
+Replace this with your public Postman documentation URL.
+
+---
+
+# 🛣️ Roadmap
+
+## ✅ Version 1 — Backend Foundation
+
+* Authentication
+* User Management
+* Video Module
 * Comments
 * Likes
-* Playlists
 * Subscriptions
-* Watch History
-* Search
-* Pagination
-* Creator Dashboard
+* Courses
+* Channel Updates
+* Dashboard Analytics
+* Cloud Storage
+* Aggregation Pipelines
 
 ---
-## (Upcoming features in this Repo and Projects)
-## 🚧 Version 2.0 — Full Stack Experience
+
+## 🚧 Version 2 — Frontend
 
 * React Frontend
-* Responsive UI
-* Infinite Scrolling
+* Responsive Design
+* Course Pages
+* Creator Dashboard UI
 * Video Player
-* Dark Mode
-* Channel Pages
-* Playlist Management
-* User Dashboard
-* Profile Customization
+* Authentication Pages
+* User Profiles
 
 ---
 
-## 🔮 Version 3.0 — Smart Learning Platform
+## 🔮 Version 3 — Smart Learning
 
-* AI-Powered Video Recommendations
-* Semantic Video Search
-* Automatic Video Transcripts
-* AI Course Summaries
-* AI Generated Notes
-* Topic Extraction
-* Smart Learning Paths
-* Personalized Learning Dashboard
+* AI Recommendations
+* AI Notes
+* Semantic Search
+* Video Transcripts
+* Learning Paths
+* Personalized Suggestions
 
 ---
 
-## 🧠 Version 4.0 — AI Learning Assistant (RAG)
+## 🧠 Version 4 — AI Learning Assistant
 
-* Retrieval-Augmented Generation (RAG)
-* Chat with Entire Courses
+* RAG Pipeline
+* Chat with Courses
 * Ask Questions from Videos
 * Timestamp-Based Answers
-* Context-Aware Learning Assistant
-* PDF + Video Knowledge Base
-* AI Mentor for Revision
-* Multi-Video Knowledge Retrieval
+* AI Mentor
 
 ---
 
-## 💻 Version 5.0 — Interactive Learning
+## 💻 Version 5 — Interactive Learning
 
 * Coding Exercises
-* Online Code Editor
-* Test Case Evaluation
-* Course Assignments
+* Online Compiler
+* Assignments
 * Progress Tracking
-* Coding Challenges
 * Certificates
-* Streak System
-* Gamification
 * Leaderboards
 
 ---
 
-## 🌍 Version 6.0 — Platform Expansion
+## 🌍 Version 6 — Platform Expansion
 
 * Live Classes
-* Real-Time Chat
-* WebSocket Notifications
-* Course Purchases
-* Instructor Verification
-* Team Learning Spaces
-* Organizations
+* Real-time Chat
+* Notifications
 * Mobile Application
+* Organizations
 * Public API
-* Admin Moderation Dashboard
+* Admin Dashboard
 
 ---
 
-# 🎯 Vision
+# 🎯 Why SkillStream?
 
-SkillStream aims to become more than a video platform—it is envisioned as a complete learning ecosystem where creators can teach effectively and learners can build skills through structured, interactive, and AI-assisted education.
+SkillStream was built to demonstrate production-grade backend engineering rather than basic CRUD development.
 
-The long-term goal is to combine scalable backend engineering with intelligent learning experiences, making education more accessible, personalized, and engaging.
+The project showcases:
+
+* Clean Architecture
+* Secure Authentication
+* Modular Design
+* Cloud Integration
+* Aggregation Pipelines
+* Scalable APIs
+* Industry-standard Backend Practices
+
+It serves as both a real-world educational platform and a portfolio project demonstrating backend engineering skills.
 
 ---
 
-# Postman documentation link
->> https://shreeyanshxxsahu-8199212.postman.co/workspace/b93eea00-8e51-4af3-8c9f-36aa95bf0425/documentation/51783407-33c71109-2f75-41c6-9263-65de3aa0f8e3
+# 👨‍💻 Author
 
-# 👨‍💻 Author : Shreeansh Sahu
+**Shreeyansh Sahu**
 
-Built with a focus on scalable backend engineering, clean architecture, and production-ready development practices.
+Computer Science Student | Backend Developer | MERN Stack Enthusiast
 
-More features and improvements will continue to be added as SkillStream evolves through future releases.
+Built with a focus on scalable architecture, clean code, and production-ready backend engineering.
+
+---
+
+# ⭐ Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub. It helps support the project and motivates future development.
