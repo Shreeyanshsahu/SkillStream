@@ -108,5 +108,5 @@ router.route('/watchhistory/:videoId').delete(
     DeleteFromwatchHistory
 );
 
-console.log("User routes loaded");
+console.log("User routes loaded successfully");
 export default router;

@@ -63,5 +63,5 @@ router.route('/updatevideo/:videoId').patch(
     updateVideo
 )
 
-console.log("Video upload route is working");
+console.log("Video routes loaded successfully");
 export default router;

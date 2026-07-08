@@ -11,4 +11,5 @@ router.post("/", verifyJWT, makeChannelUpdate);
 router.patch("/:updateId", verifyJWT, updateChannelUpdate);
 router.delete("/:updateId", verifyJWT, deleteChannelUpdate);
 
+console.log("Channel update routes loaded successfully");
 export default router;  

@@ -62,6 +62,7 @@ import UpvoteRouter from "./routes/upvotes.route.js";
 import likeRouter from "./routes/likes.route.js";
 import CourseRouter from "./routes/courses.route.js";
 import channelUpdatesRouter from "./routes/channelupdates.route.js";
+import userDashboardRouter from "./routes/userdashboard.route.js";
 // Routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/videos", videoRouter);
@@ -70,6 +71,7 @@ app.use("/api/v1/upvotes", UpvoteRouter);
 app.use("/api/v1/channelupdates", channelUpdatesRouter);
 app.use("/api/v1/courses", CourseRouter);
 app.use("/api/v1/likes", likeRouter);
+app.use("/api/v1/dashboard", userDashboardRouter);
 
 
 export { app };

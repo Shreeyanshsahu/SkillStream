@@ -28,5 +28,5 @@ router.route('/deletecomment/:commentId').delete(
 
 
 
-console.log("Comment routes loaded");
+console.log("Comment routes loaded successfully");
 export default router;

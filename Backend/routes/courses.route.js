@@ -19,4 +19,6 @@ router.get("/courses", getCourses);
 router.get("/user-courses", verifyJWT, getUserCourses);
 router.post("/courses/:courseId/videos/:videoId", verifyJWT, addVideoToCourse);
 router.delete("/courses/:courseId/videos/:videoId", verifyJWT, deleteVideoFromCourse);
+
+console.log("Courses routes loaded successfully");
 export default router;
